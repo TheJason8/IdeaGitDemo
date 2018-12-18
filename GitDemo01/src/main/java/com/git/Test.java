@@ -4,8 +4,20 @@ public class Test {
 
     public static void main(String[] args) {
 
-        System.out.println("第一次添加");
-        System.out.println("再次添加");
-        //这是clone后的修改
+        String str="151@51515@@dsajdasd";
+        String remove = remove(str);
+        System.out.println(remove);
     }
+
+     static String remove(String str){
+        int i = str.indexOf("@");
+        if (i==-1){
+            return str;
+        }
+        StringBuffer sb = new StringBuffer(str);
+       sb.deleteCharAt(i);
+       return  remove(sb.toString());
+
+    }
+
 }
